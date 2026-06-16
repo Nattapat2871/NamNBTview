@@ -1,0 +1,78 @@
+{
+  "nbtviewer.configuration.title": "NamNBTview",
+  "nbtviewer.configuration.section.nbtviewer.client.toml.title": "Client",
+  "nbtviewer.configuration.section.nbtviewer.client.toml": "Impostazioni client (nbtviewer-client.toml)",
+
+  "nbtviewer.configuration.general.button": "Generale...",
+  "nbtviewer.configuration.colors.button": "Colori...",
+  "nbtviewer.configuration.general.tooltip": "Impostazioni generali",
+  "nbtviewer.configuration.colors.tooltip": "Impostazioni colori",
+
+  "nbtviewer.configuration.general": "Generale",
+  "nbtviewer.configuration.colors": "Colori",
+
+  "nbtviewer.config.shiftOnly": "Solo SHIFT",
+  "nbtviewer.config.shiftOnly.tooltip": "Mostra lâ€™NBT solo mentre SHIFT Ã¨ premuto.",
+
+  "nbtviewer.config.singleLine": "Linea singola",
+  "nbtviewer.config.singleLine.tooltip": "Se true, mostra lâ€™NBT su una sola riga.\nSe false, usa formattazione multi-riga (pretty).",
+
+  "nbtviewer.config.showHintLine": "Mostra suggerimento SHIFT",
+  "nbtviewer.config.showHintLine.tooltip": "Se shiftOnly=true, mostra una riga di aiuto quando SHIFT non Ã¨ premuto.",
+
+  "nbtviewer.config.maxTotalChars": "Caratteri max (totale)",
+  "nbtviewer.config.maxTotalChars.tooltip": "Limite rigido per evitare tooltip enormi.\nLâ€™NBT verrÃ  troncato se superato.",
+
+  "nbtviewer.config.maxLineLen": "Lunghezza max riga",
+  "nbtviewer.config.maxLineLen.tooltip": "Limite di sicurezza per riga in modalitÃ  multi-riga.",
+
+  "nbtviewer.config.indentSpaces": "Spazi di rientro",
+  "nbtviewer.config.indentSpaces.tooltip": "Dimensione rientro (in spazi) per la formattazione.",
+
+  "nbtviewer.config.autoScale": "Scala automatica",
+  "nbtviewer.config.autoScale.tooltip": "Se true, regola la scala del blocco NBT in base alla dimensione (righe / caratteri).\nQuando attivo, la scala manuale viene ignorata.",
+
+  "nbtviewer.config.nbtScale": "Scala blocco NBT",
+  "nbtviewer.config.nbtScale.tooltip": "Scala manuale del blocco NBT.\nIgnorata se autoScale=true. 1.0 = normale.",
+
+  "nbtviewer.config.colorLabel": "Colore \"NBT:\"",
+  "nbtviewer.config.colorLabel.tooltip": "Colore HEX per lâ€™etichetta \"NBT:\". Formato: #RRGGBB",
+
+  "nbtviewer.config.colorKey": "Colore chiavi",
+  "nbtviewer.config.colorKey.tooltip": "Colore HEX per le chiavi. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorString": "Colore testo",
+  "nbtviewer.config.colorString.tooltip": "Colore HEX per le stringhe. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorNumber": "Colore numeri",
+  "nbtviewer.config.colorNumber.tooltip": "Colore HEX per i numeri. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorBoolean": "Colore booleani",
+  "nbtviewer.config.colorBoolean.tooltip": "Colore HEX per i booleani. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorPunctuation": "Colore punteggiatura",
+  "nbtviewer.config.colorPunctuation.tooltip": "Colore HEX per la punteggiatura ({}[],:). Formato: #RRGGBB",
+
+  "nbtviewer.config.colorIdentifier": "Colore identificatori",
+  "nbtviewer.config.colorIdentifier.tooltip": "Colore HEX per identificatori non tra virgolette. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorHint": "Colore testo di aiuto",
+  "nbtviewer.config.colorHint.tooltip": "Colore HEX per le righe di aiuto (SHIFT / copia). Formato: #RRGGBB",
+
+  "nbtviewer.config.copyPopup": "Popup di copia",
+  "nbtviewer.config.copyPopup.tooltip": "Mostra un popup quando lâ€™NBT viene copiato (CTRL+SHIFT+C).",
+
+  "nbtviewer.config.copySfx": "Suono di copia",
+  "nbtviewer.config.copySfx.tooltip": "Riproduce suoni quando lâ€™NBT viene copiato (CTRL+SHIFT+C).",
+
+  "nbtviewer.popup.copied": "NBT copiato negli appunti",
+  "nbtviewer.tooltip.hold_shift": "â¤· Tieni premuto SHIFT per mostrare lâ€™NBT",
+  "nbtviewer.tooltip.copy_hint": "SHIFT+CTRL+C: copia NBT",
+  "key.categories.nbtviewer": "NamNBTview",
+  "key.category.nbtviewer.keybindings": "NamNBTview",
+  "key.nbtviewer.toggle_mob_nbt": "Toggle entity NBT overlay",
+  "key.nbtviewer.open_mob_nbt_notebook": "Open full entity NBT",
+  "key.nbtviewer.lock_mob_nbt_target": "Lock targeted entity",
+  "nbtviewer.message.copied": "NBT copiato negli appunti"
+}
+

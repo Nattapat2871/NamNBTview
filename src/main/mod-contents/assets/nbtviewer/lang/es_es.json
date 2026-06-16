@@ -1,0 +1,78 @@
+{
+  "nbtviewer.configuration.title": "NamNBTview",
+  "nbtviewer.configuration.section.nbtviewer.client.toml.title": "Cliente",
+  "nbtviewer.configuration.section.nbtviewer.client.toml": "Ajustes del cliente (nbtviewer-client.toml)",
+
+  "nbtviewer.configuration.general.button": "General...",
+  "nbtviewer.configuration.colors.button": "Colores...",
+  "nbtviewer.configuration.general.tooltip": "Ajustes generales",
+  "nbtviewer.configuration.colors.tooltip": "Ajustes de color",
+
+  "nbtviewer.configuration.general": "General",
+  "nbtviewer.configuration.colors": "Colores",
+
+  "nbtviewer.config.shiftOnly": "Solo SHIFT",
+  "nbtviewer.config.shiftOnly.tooltip": "Muestra el NBT solo mientras mantienes SHIFT.",
+
+  "nbtviewer.config.singleLine": "Una sola lÃ­nea",
+  "nbtviewer.config.singleLine.tooltip": "Si true, muestra el NBT en una sola lÃ­nea.\nSi false, usa formato multi-lÃ­nea (pretty).",
+
+  "nbtviewer.config.showHintLine": "Mostrar ayuda SHIFT",
+  "nbtviewer.config.showHintLine.tooltip": "Si shiftOnly=true, muestra una lÃ­nea de ayuda cuando SHIFT no estÃ¡ pulsado.",
+
+  "nbtviewer.config.maxTotalChars": "MÃ¡x. caracteres (total)",
+  "nbtviewer.config.maxTotalChars.tooltip": "LÃ­mite estricto para evitar tooltips enormes.\nEl NBT se recortarÃ¡ al superarlo.",
+
+  "nbtviewer.config.maxLineLen": "Longitud mÃ¡x. por lÃ­nea",
+  "nbtviewer.config.maxLineLen.tooltip": "LÃ­mite de seguridad por lÃ­nea en modo multi-lÃ­nea.",
+
+  "nbtviewer.config.indentSpaces": "Espacios de sangrÃ­a",
+  "nbtviewer.config.indentSpaces.tooltip": "TamaÃ±o de sangrÃ­a (en espacios) para el formateo.",
+
+  "nbtviewer.config.autoScale": "Escalado automÃ¡tico",
+  "nbtviewer.config.autoScale.tooltip": "Si true, ajusta la escala del bloque NBT segÃºn su tamaÃ±o (lÃ­neas / caracteres).\nCuando estÃ¡ activo, se ignora la escala manual.",
+
+  "nbtviewer.config.nbtScale": "Escala del bloque NBT",
+  "nbtviewer.config.nbtScale.tooltip": "Escala manual del bloque NBT.\nSe ignora si autoScale=true. 1.0 = normal.",
+
+  "nbtviewer.config.colorLabel": "Color de \"NBT:\"",
+  "nbtviewer.config.colorLabel.tooltip": "Color HEX para la etiqueta \"NBT:\". Formato: #RRGGBB",
+
+  "nbtviewer.config.colorKey": "Color de claves",
+  "nbtviewer.config.colorKey.tooltip": "Color HEX para claves. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorString": "Color de texto",
+  "nbtviewer.config.colorString.tooltip": "Color HEX para strings. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorNumber": "Color de nÃºmeros",
+  "nbtviewer.config.colorNumber.tooltip": "Color HEX para nÃºmeros. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorBoolean": "Color de booleanos",
+  "nbtviewer.config.colorBoolean.tooltip": "Color HEX para booleanos. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorPunctuation": "Color de puntuaciÃ³n",
+  "nbtviewer.config.colorPunctuation.tooltip": "Color HEX para puntuaciÃ³n ({}[],:). Formato: #RRGGBB",
+
+  "nbtviewer.config.colorIdentifier": "Color de identificadores",
+  "nbtviewer.config.colorIdentifier.tooltip": "Color HEX para identificadores sin comillas. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorHint": "Color de texto de ayuda",
+  "nbtviewer.config.colorHint.tooltip": "Color HEX para lÃ­neas de ayuda (SHIFT / copiar). Formato: #RRGGBB",
+
+  "nbtviewer.config.copyPopup": "Popup de copia",
+  "nbtviewer.config.copyPopup.tooltip": "Muestra un popup cuando el NBT se copia (CTRL+SHIFT+C).",
+
+  "nbtviewer.config.copySfx": "Sonido de copia",
+  "nbtviewer.config.copySfx.tooltip": "Reproduce sonidos cuando el NBT se copia (CTRL+SHIFT+C).",
+
+  "nbtviewer.popup.copied": "NBT copiado al portapapeles",
+  "nbtviewer.tooltip.hold_shift": "â¤· MantÃ©n SHIFT para mostrar el NBT",
+  "nbtviewer.tooltip.copy_hint": "SHIFT+CTRL+C: copiar NBT",
+  "key.categories.nbtviewer": "NamNBTview",
+  "key.category.nbtviewer.keybindings": "NamNBTview",
+  "key.nbtviewer.toggle_mob_nbt": "Toggle entity NBT overlay",
+  "key.nbtviewer.open_mob_nbt_notebook": "Open full entity NBT",
+  "key.nbtviewer.lock_mob_nbt_target": "Lock targeted entity",
+  "nbtviewer.message.copied": "NBT copiado al portapapeles"
+}
+

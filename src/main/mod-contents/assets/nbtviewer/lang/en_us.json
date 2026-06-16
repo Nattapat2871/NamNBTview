@@ -1,0 +1,113 @@
+{
+  "nbtviewer.configuration.title": "NamNBTview",
+  "nbtviewer.configuration.section.nbtviewer.client.toml.title": "Client",
+  "nbtviewer.configuration.section.nbtviewer.client.toml": "Client-side settings (nbtviewer-client.toml)",
+
+  "nbtviewer.configuration.general.button": "General...",
+  "nbtviewer.configuration.colors.button": "Colors...",
+  "nbtviewer.configuration.general.tooltip": "General settings",
+  "nbtviewer.configuration.colors.tooltip": "Color settings",
+
+  "nbtviewer.configuration.general": "General",
+  "nbtviewer.configuration.colors": "Colors",
+
+  "nbtviewer.config.shiftOnly": "Shift only",
+  "nbtviewer.config.shiftOnly.tooltip": "Show item NBT only while holding SHIFT.",
+
+  "nbtviewer.config.mobNbtOverlay": "Entity NBT overlay",
+  "nbtviewer.config.mobNbtOverlay.tooltip": "When enabled, looking at an entity shows a black NBT panel on screen. You can also toggle it in game with the bound key.",
+
+  "nbtviewer.config.singleLine": "Single line",
+  "nbtviewer.config.singleLine.tooltip": "If true, display NBT on one single line.\nIf false, use multi-line (pretty) formatting.",
+
+  "nbtviewer.config.showHintLine": "Show hint lines",
+  "nbtviewer.config.showHintLine.tooltip": "Shows helper lines such as SHIFT or copy hints when relevant.",
+
+  "nbtviewer.config.maxTotalChars": "Max characters (total)",
+  "nbtviewer.config.maxTotalChars.tooltip": "Hard limit to prevent huge tooltips or overlays.\nNBT will be truncated when exceeded.",
+
+  "nbtviewer.config.maxLineLen": "Max line length",
+  "nbtviewer.config.maxLineLen.tooltip": "Safety limit per line in multi-line mode.",
+
+  "nbtviewer.config.indentSpaces": "Indent spaces",
+  "nbtviewer.config.indentSpaces.tooltip": "Indent size (in spaces) used for pretty formatting.",
+
+  "nbtviewer.config.autoScale": "Auto scale",
+  "nbtviewer.config.autoScale.tooltip": "If true, scales the NBT block based on its size (lines / characters).\nWhen enabled, manual scale is ignored.",
+
+  "nbtviewer.config.nbtScale": "NBT block scale",
+  "nbtviewer.config.nbtScale.tooltip": "Manual scale for the NBT block.\nIgnored if autoScale=true. 1.0 = normal.",
+
+  "nbtviewer.config.colorLabel": "\"NBT:\" color",
+  "nbtviewer.config.colorLabel.tooltip": "Hex color for the \"NBT:\" label. Format: #RRGGBB",
+
+  "nbtviewer.config.colorKey": "Key color",
+  "nbtviewer.config.colorKey.tooltip": "Hex color for keys. Format: #RRGGBB",
+
+  "nbtviewer.config.colorString": "String color",
+  "nbtviewer.config.colorString.tooltip": "Hex color for strings. Format: #RRGGBB",
+
+  "nbtviewer.config.colorNumber": "Number color",
+  "nbtviewer.config.colorNumber.tooltip": "Hex color for numbers. Format: #RRGGBB",
+
+  "nbtviewer.config.colorBoolean": "Boolean color",
+  "nbtviewer.config.colorBoolean.tooltip": "Hex color for booleans. Format: #RRGGBB",
+
+  "nbtviewer.config.colorPunctuation": "Punctuation color",
+  "nbtviewer.config.colorPunctuation.tooltip": "Hex color for punctuation ({}[],:). Format: #RRGGBB",
+
+  "nbtviewer.config.colorIdentifier": "Identifier color",
+  "nbtviewer.config.colorIdentifier.tooltip": "Hex color for unquoted identifiers. Format: #RRGGBB",
+
+  "nbtviewer.config.colorHint": "Hint text color",
+  "nbtviewer.config.colorHint.tooltip": "Hex color for hint lines (SHIFT / copy). Format: #RRGGBB",
+
+  "nbtviewer.config.copyPopup": "Copy popup",
+  "nbtviewer.config.copyPopup.tooltip": "Shows a popup when NBT is copied (CTRL+SHIFT+C).",
+
+  "nbtviewer.config.copySfx": "Copy SFX",
+  "nbtviewer.config.copySfx.tooltip": "Plays sounds when NBT is copied (CTRL+SHIFT+C).",
+
+  "nbtviewer.popup.copied": "NBT copied to clipboard",
+  "nbtviewer.popup.mob_nbt_on": "Entity NBT mode enabled",
+  "nbtviewer.popup.mob_nbt_off": "Entity NBT mode disabled",
+  "nbtviewer.popup.entity_locked": "Locked entity: %s",
+  "nbtviewer.popup.entity_unlocked": "Entity unlocked",
+
+  "nbtviewer.overlay.mob_title": "Entity: ",
+  "nbtviewer.overlay.section_snbt": "SNBT",
+  "nbtviewer.overlay.info.type": "Type",
+  "nbtviewer.overlay.info.runtime_id": "Runtime id",
+  "nbtviewer.overlay.info.uuid": "UUID",
+  "nbtviewer.overlay.info.tags": "Tags",
+  "nbtviewer.overlay.info.pos": "Pos",
+  "nbtviewer.overlay.info.rot": "Rot",
+  "nbtviewer.overlay.info.flags": "Flags",
+  "nbtviewer.overlay.info.team": "Team",
+  "nbtviewer.overlay.info.custom_name": "Custom name",
+  "nbtviewer.overlay.info.passengers": "Passengers",
+  "nbtviewer.overlay.info.armor_stand": "Armor stand",
+  "nbtviewer.overlay.info.display": "Display",
+  "nbtviewer.tooltip.lock_entity_nbt": "SHIFT+%s: lock the targeted entity",
+  "nbtviewer.tooltip.unlock_entity_nbt": "SHIFT+%s: unlock the entity",
+  "nbtviewer.tooltip.open_entity_nbt": "SHIFT+%s: open full entity NBT",
+  "nbtviewer.screen.mob_notebook": "Entity NBT: %s",
+  "nbtviewer.screen.mob_notebook_header": "Full entity NBT",
+  "nbtviewer.screen.info_icon.line1": "Some entity data is only complete in singleplayer.",
+  "nbtviewer.screen.info_icon.line2": "On servers, only synced data is visible.",
+  "nbtviewer.screen.scroll_hint": "Mouse wheel to scroll",
+  "nbtviewer.screen.copied": "Copied",
+
+  "nbtviewer.tooltip.hold_shift": "Hold SHIFT to show NBT",
+  "nbtviewer.tooltip.copy_hint": "SHIFT+CTRL+C: copy NBT",
+  "nbtviewer.message.copied": "NBT copied to clipboard",
+
+  "nbtviewer.button.copy_entity_nbt": "Copy",
+
+  "key.categories.nbtviewer": "NamNBTview",
+  "key.category.nbtviewer.keybindings": "NamNBTview",
+  "key.nbtviewer.toggle_mob_nbt": "Toggle entity NBT overlay",
+  "key.nbtviewer.open_mob_nbt_notebook": "Open full entity NBT",
+  "key.nbtviewer.lock_mob_nbt_target": "Lock targeted entity"
+}
+

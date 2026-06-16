@@ -1,0 +1,78 @@
+{
+  "nbtviewer.configuration.title": "NamNBTview",
+  "nbtviewer.configuration.section.nbtviewer.client.toml.title": "Cliente",
+  "nbtviewer.configuration.section.nbtviewer.client.toml": "ConfiguraÃ§Ãµes do cliente (nbtviewer-client.toml)",
+
+  "nbtviewer.configuration.general.button": "Geral...",
+  "nbtviewer.configuration.colors.button": "Cores...",
+  "nbtviewer.configuration.general.tooltip": "ConfiguraÃ§Ãµes gerais",
+  "nbtviewer.configuration.colors.tooltip": "ConfiguraÃ§Ãµes de cores",
+
+  "nbtviewer.configuration.general": "Geral",
+  "nbtviewer.configuration.colors": "Cores",
+
+  "nbtviewer.config.shiftOnly": "Apenas SHIFT",
+  "nbtviewer.config.shiftOnly.tooltip": "Mostra o NBT apenas enquanto SHIFT estiver pressionado.",
+
+  "nbtviewer.config.singleLine": "Linha Ãºnica",
+  "nbtviewer.config.singleLine.tooltip": "Se true, mostra o NBT em uma Ãºnica linha.\nSe false, usa formataÃ§Ã£o multi-linha (pretty).",
+
+  "nbtviewer.config.showHintLine": "Mostrar dica SHIFT",
+  "nbtviewer.config.showHintLine.tooltip": "Se shiftOnly=true, mostra uma dica quando SHIFT nÃ£o estiver pressionado.",
+
+  "nbtviewer.config.maxTotalChars": "MÃ¡x. caracteres (total)",
+  "nbtviewer.config.maxTotalChars.tooltip": "Limite rÃ­gido para evitar tooltips enormes.\nO NBT serÃ¡ truncado ao exceder.",
+
+  "nbtviewer.config.maxLineLen": "Comprimento mÃ¡x. da linha",
+  "nbtviewer.config.maxLineLen.tooltip": "Limite de seguranÃ§a por linha no modo multi-linha.",
+
+  "nbtviewer.config.indentSpaces": "EspaÃ§os de indentaÃ§Ã£o",
+  "nbtviewer.config.indentSpaces.tooltip": "Tamanho da indentaÃ§Ã£o (em espaÃ§os) para a formataÃ§Ã£o.",
+
+  "nbtviewer.config.autoScale": "Escala automÃ¡tica",
+  "nbtviewer.config.autoScale.tooltip": "Se true, ajusta a escala do bloco NBT conforme o tamanho (linhas / caracteres).\nQuando ativo, a escala manual Ã© ignorada.",
+
+  "nbtviewer.config.nbtScale": "Escala do bloco NBT",
+  "nbtviewer.config.nbtScale.tooltip": "Escala manual do bloco NBT.\nIgnorado se autoScale=true. 1.0 = normal.",
+
+  "nbtviewer.config.colorLabel": "Cor do \"NBT:\"",
+  "nbtviewer.config.colorLabel.tooltip": "Cor HEX para o rÃ³tulo \"NBT:\". Formato: #RRGGBB",
+
+  "nbtviewer.config.colorKey": "Cor das chaves",
+  "nbtviewer.config.colorKey.tooltip": "Cor HEX para chaves. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorString": "Cor do texto",
+  "nbtviewer.config.colorString.tooltip": "Cor HEX para strings. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorNumber": "Cor dos nÃºmeros",
+  "nbtviewer.config.colorNumber.tooltip": "Cor HEX para nÃºmeros. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorBoolean": "Cor dos booleanos",
+  "nbtviewer.config.colorBoolean.tooltip": "Cor HEX para booleanos. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorPunctuation": "Cor da pontuaÃ§Ã£o",
+  "nbtviewer.config.colorPunctuation.tooltip": "Cor HEX para pontuaÃ§Ã£o ({}[],:). Formato: #RRGGBB",
+
+  "nbtviewer.config.colorIdentifier": "Cor dos identificadores",
+  "nbtviewer.config.colorIdentifier.tooltip": "Cor HEX para identificadores sem aspas. Formato: #RRGGBB",
+
+  "nbtviewer.config.colorHint": "Cor do texto de dica",
+  "nbtviewer.config.colorHint.tooltip": "Cor HEX para linhas de dica (SHIFT / copiar). Formato: #RRGGBB",
+
+  "nbtviewer.config.copyPopup": "Popup de cÃ³pia",
+  "nbtviewer.config.copyPopup.tooltip": "Mostra um popup quando o NBT Ã© copiado (CTRL+SHIFT+C).",
+
+  "nbtviewer.config.copySfx": "Som de cÃ³pia",
+  "nbtviewer.config.copySfx.tooltip": "Toca sons quando o NBT Ã© copiado (CTRL+SHIFT+C).",
+
+  "nbtviewer.popup.copied": "NBT copiado para a Ã¡rea de transferÃªncia",
+  "nbtviewer.tooltip.hold_shift": "â¤· Segure SHIFT para mostrar o NBT",
+  "nbtviewer.tooltip.copy_hint": "SHIFT+CTRL+C: copiar NBT",
+  "key.categories.nbtviewer": "NamNBTview",
+  "key.category.nbtviewer.keybindings": "NamNBTview",
+  "key.nbtviewer.toggle_mob_nbt": "Toggle entity NBT overlay",
+  "key.nbtviewer.open_mob_nbt_notebook": "Open full entity NBT",
+  "key.nbtviewer.lock_mob_nbt_target": "Lock targeted entity",
+  "nbtviewer.message.copied": "NBT copiado para a Ã¡rea de transferÃªncia"
+}
+
