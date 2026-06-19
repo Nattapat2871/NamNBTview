@@ -1,15 +1,18 @@
 # NamNBTview
 
-NamNBTview is a Minecraft Fabric client mod for Minecraft 26.1.2. It displays item and entity NBT/SNBT in tooltips, overlays, and a notebook-style entity view.
+NamNBTview is a Minecraft Fabric client mod for Minecraft 1.21.11, 26.1.2, and 26.2. It displays item and entity NBT/SNBT in tooltips, overlays, and a notebook-style entity view.
 
-This repository is structured as an extracted, reproducible build of the working Minecraft 26.1.2 port. The build input is stored under `src/main/mod-contents`, and `build.ps1` packages those contents into a Fabric jar.
+This repository is structured as an extracted, reproducible build. Shared build input is stored under `src/main/mod-contents`, while version-specific compatibility classes are stored under `src/variants`. The build script packages a separate Fabric jar for each supported Minecraft version.
 
 ## Usage
 
 ### Install
 
-1. Install Fabric Loader for Minecraft `26.1.2`.
-2. Put `NamNBTview-2.2.0-mc26.1.2-fabric.jar` in your profile's `mods` folder.
+1. Install Fabric Loader for Minecraft `1.21.11`, `26.1.2`, or `26.2`.
+2. Put the matching jar in your profile's `mods` folder:
+   - `NamNBTview-2.3.0-mc1.21.11-fabric.jar` for Minecraft 1.21.11
+   - `NamNBTview-2.3.0-mc26.1.2-fabric.jar` for Minecraft 26.1.2
+   - `NamNBTview-2.3.0-mc26.2-fabric.jar` for Minecraft 26.2
 3. Install the required dependencies:
    - Fabric API
    - Cloth Config
@@ -43,18 +46,32 @@ This repository is structured as an extracted, reproducible build of the working
 Output:
 
 ```text
-build/libs/NamNBTview-2.2.0-mc26.1.2-fabric.jar
+build/libs/NamNBTview-2.3.0-mc1.21.11-fabric.jar
+build/libs/NamNBTview-2.3.0-mc26.1.2-fabric.jar
+build/libs/NamNBTview-2.3.0-mc26.2-fabric.jar
 ```
 
 ## Metadata
 
 - Project name: NamNBTview
 - Mod id: `namnbtview`
-- Version: `2.2.0`
+- Version: `2.3.0`
 - Author: Nattapat2871
-- Minecraft: `26.1.2`
+- Minecraft: `1.21.11`, `26.1.2`, `26.2`
 - Fabric Loader: `>=0.19.3`
 
 ## Notes
 
 The internal Java package and translation namespace remain `org.hohigamer.nbtviewer` / `nbtviewer` to preserve compatibility with the existing patched classes and keybinding/config names.
+
+Version 2.2.1 updates the entity notebook screen to Minecraft 26.1.2's
+`extractTransparentBackground` screen API, preventing the client crash when
+opening it with `Shift + O`.
+
+Version 2.3.0 adds a square 512x512 mod icon and a dedicated Minecraft 26.2
+compatibility build. Minecraft 26.2 moved screen access to `Minecraft.gui` and
+moved `NbtPredicate` to `net.minecraft.advancements.predicates`; the 26.2
+variant contains the required compatibility classes without weakening the
+26.1.2 build. It also packages the tested intermediary-mapped 1.21.11 build as
+a dedicated variant, since 1.21.11 and 26.x do not share a binary-compatible
+Minecraft namespace.

@@ -1,0 +1,112 @@
+{
+  "nbtviewer.configuration.title": "NBTviewer",
+  "nbtviewer.configuration.section.nbtviewer.client.toml.title": "Client",
+  "nbtviewer.configuration.section.nbtviewer.client.toml": "Parametres client (nbtviewer-client.toml)",
+
+  "nbtviewer.configuration.general.button": "General...",
+  "nbtviewer.configuration.colors.button": "Couleurs...",
+  "nbtviewer.configuration.general.tooltip": "Parametres generaux",
+  "nbtviewer.configuration.colors.tooltip": "Parametres de couleurs",
+
+  "nbtviewer.configuration.general": "General",
+  "nbtviewer.configuration.colors": "Couleurs",
+
+  "nbtviewer.config.shiftOnly": "SHIFT uniquement",
+  "nbtviewer.config.shiftOnly.tooltip": "Affiche le NBT des items uniquement quand SHIFT est maintenu.",
+
+  "nbtviewer.config.mobNbtOverlay": "Panneau NBT des entites",
+  "nbtviewer.config.mobNbtOverlay.tooltip": "Quand cette option est activee, regarder une entite affiche un panneau noir avec son NBT. Tu peux aussi le basculer en jeu avec la touche du raccourci.",
+
+  "nbtviewer.config.singleLine": "Une seule ligne",
+  "nbtviewer.config.singleLine.tooltip": "Si true, affiche le NBT sur une seule ligne.\nSi false, utilise un format multi-lignes.",
+
+  "nbtviewer.config.showHintLine": "Afficher les aides",
+  "nbtviewer.config.showHintLine.tooltip": "Affiche les lignes d'aide comme SHIFT ou la copie quand c'est utile.",
+
+  "nbtviewer.config.maxTotalChars": "Nombre max de caracteres",
+  "nbtviewer.config.maxTotalChars.tooltip": "Limite stricte pour eviter des tooltips ou panneaux trop grands.\nLe NBT sera tronque au-dela de cette limite.",
+
+  "nbtviewer.config.maxLineLen": "Longueur max par ligne",
+  "nbtviewer.config.maxLineLen.tooltip": "Limite de securite par ligne en mode multi-lignes.",
+
+  "nbtviewer.config.indentSpaces": "Espaces d'indentation",
+  "nbtviewer.config.indentSpaces.tooltip": "Taille de l'indentation utilisee pour le formatage.",
+
+  "nbtviewer.config.autoScale": "Taille automatique",
+  "nbtviewer.config.autoScale.tooltip": "Si true, ajuste automatiquement la taille du bloc NBT selon sa taille.\nQuand active, la taille manuelle est ignoree.",
+
+  "nbtviewer.config.nbtScale": "Taille du bloc NBT",
+  "nbtviewer.config.nbtScale.tooltip": "Taille manuelle du bloc NBT.\nIgnoree si autoScale=true. 1.0 = taille normale.",
+
+  "nbtviewer.config.colorLabel": "Couleur de \"NBT:\"",
+  "nbtviewer.config.colorLabel.tooltip": "Couleur HEX du label \"NBT:\". Format : #RRGGBB",
+
+  "nbtviewer.config.colorKey": "Couleur des cles",
+  "nbtviewer.config.colorKey.tooltip": "Couleur HEX des cles. Format : #RRGGBB",
+
+  "nbtviewer.config.colorString": "Couleur des chaines",
+  "nbtviewer.config.colorString.tooltip": "Couleur HEX des chaines. Format : #RRGGBB",
+
+  "nbtviewer.config.colorNumber": "Couleur des nombres",
+  "nbtviewer.config.colorNumber.tooltip": "Couleur HEX des nombres. Format : #RRGGBB",
+
+  "nbtviewer.config.colorBoolean": "Couleur des booleens",
+  "nbtviewer.config.colorBoolean.tooltip": "Couleur HEX des booleens. Format : #RRGGBB",
+
+  "nbtviewer.config.colorPunctuation": "Couleur de la ponctuation",
+  "nbtviewer.config.colorPunctuation.tooltip": "Couleur HEX de la ponctuation ({}[],:). Format : #RRGGBB",
+
+  "nbtviewer.config.colorIdentifier": "Couleur des identifiants",
+  "nbtviewer.config.colorIdentifier.tooltip": "Couleur HEX des identifiants non guillemetes. Format : #RRGGBB",
+
+  "nbtviewer.config.colorHint": "Couleur des aides",
+  "nbtviewer.config.colorHint.tooltip": "Couleur HEX des lignes d'aide (SHIFT / copie). Format : #RRGGBB",
+
+  "nbtviewer.config.copyPopup": "Popup de copie",
+  "nbtviewer.config.copyPopup.tooltip": "Affiche une popup quand le NBT est copie (CTRL+SHIFT+C).",
+
+  "nbtviewer.config.copySfx": "Son de copie",
+  "nbtviewer.config.copySfx.tooltip": "Joue des sons quand le NBT est copie (CTRL+SHIFT+C).",
+
+  "nbtviewer.popup.copied": "NBT copie dans le presse-papier",
+  "nbtviewer.popup.mob_nbt_on": "Mode NBT entites active",
+  "nbtviewer.popup.mob_nbt_off": "Mode NBT entites desactive",
+  "nbtviewer.popup.entity_locked": "Entite verrouillee : %s",
+  "nbtviewer.popup.entity_unlocked": "Entite deverrouillee",
+
+  "nbtviewer.overlay.mob_title": "Entite : ",
+  "nbtviewer.overlay.section_snbt": "SNBT",
+  "nbtviewer.overlay.info.type": "Type",
+  "nbtviewer.overlay.info.runtime_id": "Id runtime",
+  "nbtviewer.overlay.info.uuid": "UUID",
+  "nbtviewer.overlay.info.tags": "Tags",
+  "nbtviewer.overlay.info.pos": "Pos",
+  "nbtviewer.overlay.info.rot": "Rot",
+  "nbtviewer.overlay.info.flags": "Flags",
+  "nbtviewer.overlay.info.team": "Equipe",
+  "nbtviewer.overlay.info.custom_name": "Nom perso",
+  "nbtviewer.overlay.info.passengers": "Passagers",
+  "nbtviewer.overlay.info.armor_stand": "Armor stand",
+  "nbtviewer.overlay.info.display": "Display",
+  "nbtviewer.tooltip.lock_entity_nbt": "SHIFT+%s : verrouiller l'entite ciblee",
+  "nbtviewer.tooltip.unlock_entity_nbt": "SHIFT+%s : deverrouiller l'entite",
+  "nbtviewer.tooltip.open_entity_nbt": "SHIFT+%s : ouvrir le NBT complet de l'entite",
+  "nbtviewer.screen.mob_notebook": "NBT de l'entite : %s",
+  "nbtviewer.screen.mob_notebook_header": "NBT complet de l'entite",
+  "nbtviewer.screen.info_icon.line1": "Certaines donnees ne sont completes qu'en solo.",
+  "nbtviewer.screen.info_icon.line2": "En multi, seules les infos synchronisees sont visibles.",
+  "nbtviewer.screen.scroll_hint": "Molette pour faire defiler",
+  "nbtviewer.screen.copied": "Copie",
+
+  "nbtviewer.tooltip.hold_shift": "Maintiens SHIFT pour afficher le NBT",
+  "nbtviewer.tooltip.copy_hint": "SHIFT+CTRL+C : copier le NBT",
+  "nbtviewer.message.copied": "NBT copie dans le presse-papier",
+
+  "nbtviewer.button.copy_entity_nbt": "Copier",
+
+  "key.categories.nbtviewer": "NBTviewer",
+  "key.category.nbtviewer.keybindings": "NBTviewer",
+  "key.nbtviewer.toggle_mob_nbt": "Activer le panneau NBT des entites",
+  "key.nbtviewer.open_mob_nbt_notebook": "Ouvrir le NBT complet de l'entite",
+  "key.nbtviewer.lock_mob_nbt_target": "Verrouiller l'entite ciblee"
+}
