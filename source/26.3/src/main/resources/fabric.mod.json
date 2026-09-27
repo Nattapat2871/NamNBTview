@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "namnbtview",
+  "version": "2.3.1",
+  "name": "NamNBTview",
+  "description": "Displays item and entity NBT (SNBT) directly in tooltips and overlays for Minecraft 26.3.",
+  "authors": ["nattapat2871 (https://nattapat2871.me)"],
+  "license": "MIT",
+  "icon": "assets/nbtviewer/logo.png",
+  "environment": "client",
+
+  "entrypoints": {
+    "client": ["org.hohigamer.nbtviewer.NbtviewerClient"],
+    "modmenu": ["org.hohigamer.nbtviewer.client.NbtviewerModMenu"]
+  },
+
+  "mixins": ["nbtviewer.mixins.json"],
+
+  "depends": {
+    "minecraft": "26.3",
+    "fabricloader": ">=0.19.5",
+    "fabric-api": "*",
+    "fabric-key-mapping-api-v1": "*",
+    "cloth-config": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

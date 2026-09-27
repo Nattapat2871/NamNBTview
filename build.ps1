@@ -6,7 +6,7 @@ $variantsDir = Join-Path $projectRoot "src\variants"
 $buildDir = Join-Path $projectRoot "build"
 $libsDir = Join-Path $buildDir "libs"
 $stagingRoot = Join-Path $buildDir "staging"
-$modVersion = "2.3.0"
+$modVersion = "2.3.1"
 
 $targets = @(
     @{
@@ -142,3 +142,29 @@ foreach ($target in $targets) {
 
     Write-Host "Built $outputJar"
 }
+
+# Minecraft 26.3 is built from Java source because its client/input APIs changed
+# substantially and the compatibility fix for Ctrl+U must be compiled against 26.3.
+$source263Dir = Join-Path $projectRoot "source\26.3"
+$gradle263 = Join-Path $source263Dir "gradlew.bat"
+if (-not (Test-Path -LiteralPath $gradle263)) {
+    throw "Missing Minecraft 26.3 source build: $gradle263"
+}
+
+Push-Location $source263Dir
+try {
+    & $gradle263 clean build --no-daemon --stacktrace
+    if ($LASTEXITCODE -ne 0) {
+        throw "Minecraft 26.3 source build failed with exit code $LASTEXITCODE"
+    }
+} finally {
+    Pop-Location
+}
+
+$source263Jar = Join-Path $source263Dir "build\libs\NamNBTview-$modVersion-mc26.3-fabric.jar"
+$output263Jar = Join-Path $libsDir "NamNBTview-$modVersion-mc26.3-fabric.jar"
+if (-not (Test-Path -LiteralPath $source263Jar)) {
+    throw "Missing Minecraft 26.3 build artifact: $source263Jar"
+}
+Copy-Item -LiteralPath $source263Jar -Destination $output263Jar -Force
+Write-Host "Built $output263Jar from Java source"

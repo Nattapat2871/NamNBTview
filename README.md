@@ -22,12 +22,13 @@
 
 | Minecraft | Release file | Minimum Fabric Loader |
 | --- | --- | --- |
-| 1.21.11 | `NamNBTview-2.3.0-mc1.21.11-fabric.jar` | 0.18.4 |
-| 26.1.2 | `NamNBTview-2.3.0-mc26.1.2-fabric.jar` | 0.19.3 |
-| 26.2 | `NamNBTview-2.3.0-mc26.2-fabric.jar` | 0.19.3 |
+| 1.21.11 | `NamNBTview-2.3.1-mc1.21.11-fabric.jar` | 0.18.4 |
+| 26.1.2 | `NamNBTview-2.3.1-mc26.1.2-fabric.jar` | 0.19.3 |
+| 26.2 | `NamNBTview-2.3.1-mc26.2-fabric.jar` | 0.19.3 |
+| 26.3 | `NamNBTview-2.3.1-mc26.3-fabric.jar` | 0.19.5 |
 
 Each Minecraft version has a separate JAR because the Minecraft APIs and
-mapping namespaces are not binary-compatible across all three versions.
+mapping namespaces are not binary-compatible across all supported versions.
 
 ## Installing the Mod
 
@@ -61,6 +62,7 @@ The `Shift only` requirement can be disabled from the mod configuration.
 - Look at an entity while the overlay is enabled to inspect its available NBT.
 - Press `Shift + L` to lock or unlock the current entity target.
 - Press `Shift + O` to open the complete entity NBT notebook.
+- On Minecraft 26.3, `Ctrl + U` is also available: it opens the entity notebook when an entity is selected, otherwise it opens NamNBTview configuration.
 
 Some entity data is only available in singleplayer because multiplayer servers
 do not synchronize every NBT field to clients.
@@ -88,6 +90,7 @@ cd NamNBTview
 src/main/mod-contents/                 Shared Minecraft 26.x mod contents
 src/variants/1.21.11/mod-contents/    Minecraft 1.21.11 intermediary build
 src/variants/26.2/                     Minecraft 26.2 compatibility classes
+source/26.3/                           Buildable Java source for Minecraft 26.3
 build.ps1                              Multi-version packaging script
 ```
 
@@ -112,9 +115,10 @@ Run:
 The artifacts are written to:
 
 ```text
-build/libs/NamNBTview-2.3.0-mc1.21.11-fabric.jar
-build/libs/NamNBTview-2.3.0-mc26.1.2-fabric.jar
-build/libs/NamNBTview-2.3.0-mc26.2-fabric.jar
+build/libs/NamNBTview-2.3.1-mc1.21.11-fabric.jar
+build/libs/NamNBTview-2.3.1-mc26.1.2-fabric.jar
+build/libs/NamNBTview-2.3.1-mc26.2-fabric.jar
+build/libs/NamNBTview-2.3.1-mc26.3-fabric.jar
 ```
 
 The build script creates an isolated staging directory for each Minecraft
@@ -125,10 +129,10 @@ important API references, and then packages the corresponding Fabric JAR.
 
 - Project: NamNBTview
 - Mod ID: `namnbtview`
-- Current version: `2.3.0`
+- Current version: `2.3.1`
 - Author: [Nattapat2871](https://github.com/Nattapat2871)
 - License: MIT
-- Supported Minecraft versions: 1.21.11, 26.1.2, and 26.2
+- Supported Minecraft versions: 1.21.11, 26.1.2, 26.2, and 26.3
 
 ## Credits
 

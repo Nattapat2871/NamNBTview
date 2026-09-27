@@ -1,0 +1,77 @@
+{
+  "nbtviewer.configuration.title": "NamNBTview",
+  "nbtviewer.configuration.section.nbtviewer.client.toml.title": "Client",
+  "nbtviewer.configuration.section.nbtviewer.client.toml": "Client-Einstellungen (nbtviewer-client.toml)",
+
+  "nbtviewer.configuration.general.button": "Allgemein...",
+  "nbtviewer.configuration.colors.button": "Farben...",
+  "nbtviewer.configuration.general.tooltip": "Allgemeine Einstellungen",
+  "nbtviewer.configuration.colors.tooltip": "Farbeinstellungen",
+
+  "nbtviewer.configuration.general": "Allgemein",
+  "nbtviewer.configuration.colors": "Farben",
+
+  "nbtviewer.config.shiftOnly": "Nur SHIFT",
+  "nbtviewer.config.shiftOnly.tooltip": "NBT nur anzeigen, wenn SHIFT gedrÃ¼ckt wird.",
+
+  "nbtviewer.config.singleLine": "Einzeilig",
+  "nbtviewer.config.singleLine.tooltip": "Wenn true, NBT in einer Zeile anzeigen.\nWenn false, mehrzeilig (pretty) formatieren.",
+
+  "nbtviewer.config.showHintLine": "SHIFT-Hinweis anzeigen",
+  "nbtviewer.config.showHintLine.tooltip": "Wenn shiftOnly=true, einen Hinweis anzeigen, wenn SHIFT nicht gedrÃ¼ckt wird.",
+
+  "nbtviewer.config.maxTotalChars": "Maximale Zeichen (gesamt)",
+  "nbtviewer.config.maxTotalChars.tooltip": "Harte Grenze, um riesige Tooltips zu vermeiden.\nNBT wird bei Ãœberschreitung gekÃ¼rzt.",
+
+  "nbtviewer.config.maxLineLen": "Maximale ZeilenlÃ¤nge",
+  "nbtviewer.config.maxLineLen.tooltip": "Sicherheitsgrenze pro Zeile im mehrzeiligen Modus.",
+
+  "nbtviewer.config.indentSpaces": "EinrÃ¼ckungsabstÃ¤nde",
+  "nbtviewer.config.indentSpaces.tooltip": "EinrÃ¼ckung (Anzahl Leerzeichen) fÃ¼r pretty-Formatierung.",
+
+  "nbtviewer.config.autoScale": "Automatische Skalierung",
+  "nbtviewer.config.autoScale.tooltip": "Wenn true, skaliert den NBT-Block nach GrÃ¶ÃŸe (Zeilen / Zeichen).\nWenn aktiv, wird die manuelle Skalierung ignoriert.",
+
+  "nbtviewer.config.nbtScale": "NBT-Block-Skalierung",
+  "nbtviewer.config.nbtScale.tooltip": "Manuelle Skalierung des NBT-Blocks.\nIgnoriert, wenn autoScale=true. 1.0 = normal.",
+
+  "nbtviewer.config.colorLabel": "\"NBT:\" Farbe",
+  "nbtviewer.config.colorLabel.tooltip": "Hex-Farbe fÃ¼r das \"NBT:\"-Label. Format: #RRGGBB",
+
+  "nbtviewer.config.colorKey": "SchlÃ¼sselfarbe",
+  "nbtviewer.config.colorKey.tooltip": "Hex-Farbe fÃ¼r SchlÃ¼ssel. Format: #RRGGBB",
+
+  "nbtviewer.config.colorString": "Textfarbe",
+  "nbtviewer.config.colorString.tooltip": "Hex-Farbe fÃ¼r Strings. Format: #RRGGBB",
+
+  "nbtviewer.config.colorNumber": "Zahlenfarbe",
+  "nbtviewer.config.colorNumber.tooltip": "Hex-Farbe fÃ¼r Zahlen. Format: #RRGGBB",
+
+  "nbtviewer.config.colorBoolean": "Boolean-Farbe",
+  "nbtviewer.config.colorBoolean.tooltip": "Hex-Farbe fÃ¼r Booleans. Format: #RRGGBB",
+
+  "nbtviewer.config.colorPunctuation": "Interpunktionsfarbe",
+  "nbtviewer.config.colorPunctuation.tooltip": "Hex-Farbe fÃ¼r Satzzeichen ({}[],:). Format: #RRGGBB",
+
+  "nbtviewer.config.colorIdentifier": "Bezeichnerfarbe",
+  "nbtviewer.config.colorIdentifier.tooltip": "Hex-Farbe fÃ¼r nicht zitierte Bezeichner. Format: #RRGGBB",
+
+  "nbtviewer.config.colorHint": "Hinweistextfarbe",
+  "nbtviewer.config.colorHint.tooltip": "Hex-Farbe fÃ¼r Hinweiszeilen (SHIFT / Kopieren). Format: #RRGGBB",
+
+  "nbtviewer.config.copyPopup": "Kopier-Popup",
+  "nbtviewer.config.copyPopup.tooltip": "Zeigt ein Popup an, wenn NBT kopiert wird (STRG+SHIFT+C).",
+
+  "nbtviewer.config.copySfx": "Kopier-Sound",
+  "nbtviewer.config.copySfx.tooltip": "Spielt Sounds ab, wenn NBT kopiert wird (STRG+SHIFT+C).",
+
+  "nbtviewer.popup.copied": "NBT in die Zwischenablage kopiert",
+  "nbtviewer.tooltip.hold_shift": "â¤· SHIFT gedrÃ¼ckt halten, um NBT anzuzeigen",
+  "nbtviewer.tooltip.copy_hint": "SHIFT+STRG+C: NBT kopieren",
+  "key.categories.nbtviewer": "NamNBTview",
+  "key.category.nbtviewer.keybindings": "NamNBTview",
+  "key.nbtviewer.toggle_mob_nbt": "Toggle entity NBT overlay",
+  "key.nbtviewer.open_mob_nbt_notebook": "Open full entity NBT",
+  "key.nbtviewer.lock_mob_nbt_target": "Lock targeted entity",
+  "nbtviewer.message.copied": "NBT in die Zwischenablage kopiert"
+}

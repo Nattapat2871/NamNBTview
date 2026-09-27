@@ -6,3 +6,6 @@ build/
 .idea/
 .vscode/
 Thumbs.db
+.serena/
+port-26.3/
+recovered-26.2/

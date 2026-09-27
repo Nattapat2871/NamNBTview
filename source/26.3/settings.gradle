@@ -1,0 +1,9 @@
+// Author: nattapat2871 (https://nattapat2871.me)
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+rootProject.name = 'NamNBTview-26.3'
