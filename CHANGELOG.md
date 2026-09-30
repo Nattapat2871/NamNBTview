@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.3.4 - Minecraft 26.3 modifier-event fix
+
+- Tracks Shift state from Minecraft 26.3's real `KeyboardHandler.keyPress(..., KeyEvent)` events.
+- Uses vanilla's modifier bitmask semantics (`KeyEvent.modifiers()`, Shift mask `0x03`) as the primary signal for Shift-held tooltips.
+- Keeps SDL scancode polling through `InputConstants.isKeyDown(KEY_LSHIFT/KEY_RSHIFT)` as a fallback.
+- Retains the 2.3.3 corrections for Minecraft 26.3 SDL scancodes and item serialization fallback.
+
+This removes the dependency on timing-sensitive keyboard polling for the tooltip activation path.
+
 ## 2.3.3 - Minecraft 26.3 input API fix
 
 - Fixed the actual Minecraft 26.3 keyboard-input regression that prevented Shift-held NBT tooltips from activating.

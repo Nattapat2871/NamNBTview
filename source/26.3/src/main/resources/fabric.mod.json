@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "namnbtview",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "name": "NamNBTview",
   "description": "Displays item, block, block-entity and entity NBT (SNBT) with tooltip and targeted-viewer support for Minecraft 26.3.",
   "authors": ["nattapat2871 (https://nattapat2871.me)"],

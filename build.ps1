@@ -6,7 +6,7 @@ $variantsDir = Join-Path $projectRoot "src\variants"
 $buildDir = Join-Path $projectRoot "build"
 $libsDir = Join-Path $buildDir "libs"
 $stagingRoot = Join-Path $buildDir "staging"
-$modVersion = "2.3.3"
+$modVersion = "2.3.4"
 
 $targets = @(
     @{

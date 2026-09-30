@@ -65,6 +65,7 @@ import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.minecraft.advancements.predicates.NbtPredicate;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
@@ -141,6 +142,7 @@ public final class NbtTooltipHandler {
     private static long lastTooltipTimeMs = 0L;
     private static boolean lastCDown = false;
     private static boolean lastUDown = false;
+    private static volatile int lastInputModifiers = 0;
     private static long popupStartMs = -1L;
     private static Component popupText = null;
     private static int cachedEntityId = Integer.MIN_VALUE;
@@ -1030,7 +1032,17 @@ public final class NbtTooltipHandler {
         return 1.0f - p * p * p;
     }
 
+    public static void onKeyboardEvent(KeyEvent event) {
+        if (event != null) {
+            lastInputModifiers = event.modifiers();
+        }
+    }
+
     private static boolean isShiftDown() {
+        if ((lastInputModifiers & 0x03) != 0) {
+            return true;
+        }
+
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.getWindow() == null) {
             return false;
