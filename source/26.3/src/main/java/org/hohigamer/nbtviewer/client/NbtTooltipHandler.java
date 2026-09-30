@@ -51,7 +51,6 @@
 package org.hohigamer.nbtviewer.client;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import com.mojang.blaze3d.platform.Window;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
 import java.util.ArrayList;
@@ -72,6 +71,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.server.IntegratedServer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -112,9 +112,9 @@ import org.joml.Matrix3x2fStack;
 
 public final class NbtTooltipHandler {
     private static final KeyMapping.Category KEY_CATEGORY = KeyMapping.Category.register((Identifier)Identifier.fromNamespaceAndPath((String)"nbtviewer", (String)"keybindings"));
-    private static final KeyMapping TOGGLE_MOB_NBT_KEY = KeyMappingHelper.registerKeyMapping((KeyMapping)new KeyMapping("key.nbtviewer.toggle_mob_nbt", InputConstants.Type.KEYBOARD, 78, KEY_CATEGORY));
-    private static final KeyMapping OPEN_MOB_NOTEBOOK_KEY = KeyMappingHelper.registerKeyMapping((KeyMapping)new KeyMapping("key.nbtviewer.open_mob_nbt_notebook", InputConstants.Type.KEYBOARD, 79, KEY_CATEGORY));
-    private static final KeyMapping LOCK_MOB_TARGET_KEY = KeyMappingHelper.registerKeyMapping((KeyMapping)new KeyMapping("key.nbtviewer.lock_mob_nbt_target", InputConstants.Type.KEYBOARD, 76, KEY_CATEGORY));
+    private static final KeyMapping TOGGLE_MOB_NBT_KEY = KeyMappingHelper.registerKeyMapping((KeyMapping)new KeyMapping("key.nbtviewer.toggle_mob_nbt", InputConstants.Type.KEYBOARD, InputConstants.KEY_N, KEY_CATEGORY));
+    private static final KeyMapping OPEN_MOB_NOTEBOOK_KEY = KeyMappingHelper.registerKeyMapping((KeyMapping)new KeyMapping("key.nbtviewer.open_mob_nbt_notebook", InputConstants.Type.KEYBOARD, InputConstants.KEY_O, KEY_CATEGORY));
+    private static final KeyMapping LOCK_MOB_TARGET_KEY = KeyMappingHelper.registerKeyMapping((KeyMapping)new KeyMapping("key.nbtviewer.lock_mob_nbt_target", InputConstants.Type.KEYBOARD, InputConstants.KEY_L, KEY_CATEGORY));
     private static final int POPUP_TOTAL_MS = 1700;
     private static final int POPUP_SLIDE_MS = 220;
     private static final int POPUP_FADE_MS = 420;
@@ -220,10 +220,11 @@ public final class NbtTooltipHandler {
     }
 
     private static void handleCopyShortcut(Minecraft client) {
-        Window win = client.getWindow();
-        boolean ctrl = InputConstants.isKeyDown(341) || InputConstants.isKeyDown(345);
-        boolean shift = InputConstants.isKeyDown(340) || InputConstants.isKeyDown(344);
-        boolean cDown = InputConstants.isKeyDown(67);
+        boolean ctrl = InputConstants.isKeyDown(InputConstants.KEY_LCONTROL)
+                || InputConstants.isKeyDown(InputConstants.KEY_RCONTROL);
+        boolean shift = InputConstants.isKeyDown(InputConstants.KEY_LSHIFT)
+                || InputConstants.isKeyDown(InputConstants.KEY_RSHIFT);
+        boolean cDown = InputConstants.isKeyDown(InputConstants.KEY_C);
         if (cDown && !lastCDown && ctrl && shift) {
             NbtTooltipHandler.tryCopy();
         }
@@ -234,8 +235,27 @@ public final class NbtTooltipHandler {
         if (stack == null || stack.isEmpty() || registries == null) {
             return null;
         }
+
         var ops = RegistryOps.create(NbtOps.INSTANCE, registries);
-        return ItemStack.CODEC.encodeStart(ops, stack).result().orElse(null);
+        Tag encoded = ItemStack.CODEC.encodeStart(ops, stack).result().orElse(null);
+        if (encoded != null) {
+            return encoded;
+        }
+
+        CompoundTag fallback = new CompoundTag();
+        fallback.putString("id", BuiltInRegistries.ITEM.getKey(stack.getItem()).toString());
+        fallback.putInt("count", stack.getCount());
+
+        DataComponentPatch patch = stack.getComponentsPatch();
+        if (!patch.isEmpty()) {
+            Tag components = DataComponentPatch.CODEC.encodeStart(ops, patch).result().orElse(null);
+            if (components != null) {
+                fallback.put("components", components);
+            } else {
+                fallback.putString("components_debug", patch.toString());
+            }
+        }
+        return fallback;
     }
 
     private static Tag toNbtTag(ItemStack stack) {
@@ -1015,8 +1035,8 @@ public final class NbtTooltipHandler {
         if (mc == null || mc.getWindow() == null) {
             return false;
         }
-        Window win = mc.getWindow();
-        return InputConstants.isKeyDown(340) || InputConstants.isKeyDown(344);
+        return InputConstants.isKeyDown(InputConstants.KEY_LSHIFT)
+                || InputConstants.isKeyDown(InputConstants.KEY_RSHIFT);
     }
 
     private static Style hintStyle(NbtviewerConfig cfg) {

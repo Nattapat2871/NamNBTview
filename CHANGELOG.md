@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.3.3 - Minecraft 26.3 input API fix
+
+- Fixed the actual Minecraft 26.3 keyboard-input regression that prevented Shift-held NBT tooltips from activating.
+- Replaced legacy GLFW-style numeric key codes with Minecraft 26.3 InputConstants values for left/right Shift, left/right Ctrl, C, N, O, and L.
+- Restored Ctrl+Shift+C clipboard copying under the 26.3 input backend.
+- Corrected the default N/O/L key mappings for Minecraft 26.3.
+- Added a serialization fallback that always produces inspectable item data from id, count, and DataComponentPatch when ItemStack.CODEC cannot encode an item.
+
+Root cause: Minecraft 26.3 uses a different keyboard code space. For example LSHIFT/RSHIFT are 225/229 instead of the legacy 340/344 values used by 2.3.2.
+
+Validation: compiled bytecode was inspected and contains the Minecraft 26.3 key codes; the Java 25 / Minecraft 26.3 Gradle build completes successfully.
+
 ## 2.3.2 - Minecraft 26.3 fixes
 
 - Fixed item NBT tooltips on Minecraft 26.3 by attaching the NBT lines to the vanilla item tooltip text path instead of the tooltip-image slot.

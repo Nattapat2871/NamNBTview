@@ -22,10 +22,10 @@
 
 | Minecraft | Release file | Minimum Fabric Loader |
 | --- | --- | --- |
-| 1.21.11 | `NamNBTview-2.3.2-mc1.21.11-fabric.jar` | 0.18.4 |
-| 26.1.2 | `NamNBTview-2.3.2-mc26.1.2-fabric.jar` | 0.19.3 |
-| 26.2 | `NamNBTview-2.3.2-mc26.2-fabric.jar` | 0.19.3 |
-| 26.3 | `NamNBTview-2.3.2-mc26.3-fabric.jar` | 0.19.5 |
+| 1.21.11 | `NamNBTview-2.3.3-mc1.21.11-fabric.jar` | 0.18.4 |
+| 26.1.2 | `NamNBTview-2.3.3-mc26.1.2-fabric.jar` | 0.19.3 |
+| 26.2 | `NamNBTview-2.3.3-mc26.2-fabric.jar` | 0.19.3 |
+| 26.3 | `NamNBTview-2.3.3-mc26.3-fabric.jar` | 0.19.5 |
 
 Each Minecraft version has a separate JAR because the Minecraft APIs and
 mapping namespaces are not binary-compatible across all supported versions.
@@ -115,10 +115,10 @@ Run:
 The artifacts are written to:
 
 ```text
-build/libs/NamNBTview-2.3.2-mc1.21.11-fabric.jar
-build/libs/NamNBTview-2.3.2-mc26.1.2-fabric.jar
-build/libs/NamNBTview-2.3.2-mc26.2-fabric.jar
-build/libs/NamNBTview-2.3.2-mc26.3-fabric.jar
+build/libs/NamNBTview-2.3.3-mc1.21.11-fabric.jar
+build/libs/NamNBTview-2.3.3-mc26.1.2-fabric.jar
+build/libs/NamNBTview-2.3.3-mc26.2-fabric.jar
+build/libs/NamNBTview-2.3.3-mc26.3-fabric.jar
 ```
 
 The build script creates an isolated staging directory for each Minecraft
@@ -129,7 +129,7 @@ important API references, and then packages the corresponding Fabric JAR.
 
 - Project: NamNBTview
 - Mod ID: `namnbtview`
-- Current version: `2.3.2`
+- Current version: `2.3.3`
 - Author: [Nattapat2871](https://github.com/Nattapat2871)
 - License: MIT
 - Supported Minecraft versions: 1.21.11, 26.1.2, 26.2, and 26.3
