@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "namnbtview",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "name": "NamNBTview",
-  "description": "Displays item and entity NBT (SNBT) directly in tooltips and overlays for Minecraft 26.3.",
+  "description": "Displays item, block, block-entity and entity NBT (SNBT) with tooltip and targeted-viewer support for Minecraft 26.3.",
   "authors": ["nattapat2871 (https://nattapat2871.me)"],
   "license": "MIT",
   "icon": "assets/nbtviewer/logo.png",

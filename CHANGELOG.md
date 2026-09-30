@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.3.2 - Minecraft 26.3 fixes
+
+- Fixed item NBT tooltips on Minecraft 26.3 by attaching the NBT lines to the vanilla item tooltip text path instead of the tooltip-image slot.
+- Holding Shift now reveals the serialized item NBT reliably; the copy shortcut continues to use the NBT currently shown in the tooltip.
+- Changed Ctrl+U to open the NBT viewer for the block, block entity, or entity currently under the crosshair instead of opening configuration.
+- Block entities use their synced/full metadata when available; ordinary blocks fall back to their block-state SNBT plus coordinates.
+- Kept the notebook Copy button and clipboard path on the Minecraft 26.3 client API.
+
+Validation: Minecraft 26.3 Gradle build completed successfully after the input, tooltip and target-viewer changes.
+
 ## 2.3.1 - Minecraft 26.3
 
 - Added a native Minecraft 26.3 Fabric build compiled from Java source.

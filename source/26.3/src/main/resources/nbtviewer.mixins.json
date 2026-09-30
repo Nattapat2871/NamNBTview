@@ -3,7 +3,7 @@
   "package": "org.hohigamer.nbtviewer.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
-    "ItemStackTooltipImageMixin",
+    "ItemStackTooltipLinesMixin",
     "ClientTooltipComponentMixin"
   ],
   "injectors": {

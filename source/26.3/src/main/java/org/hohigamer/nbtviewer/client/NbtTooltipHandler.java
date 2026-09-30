@@ -70,11 +70,13 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.server.IntegratedServer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.NbtUtils;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
@@ -92,8 +94,11 @@ import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.entity.Display;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -208,11 +213,7 @@ public final class NbtTooltipHandler {
         lastUDown = uDown;
 
         if (ctrlURequested) {
-            if (NbtTooltipHandler.getSelectedOverlayEntity(client) != null) {
-                NbtTooltipHandler.openMobNotebook(client);
-            } else {
-                client.gui.setScreen(NbtviewerConfigScreen.create(null));
-            }
+            NbtTooltipHandler.openTargetNotebook(client);
         } else if (notebookRequested) {
             NbtTooltipHandler.openMobNotebook(client);
         }
@@ -229,13 +230,46 @@ public final class NbtTooltipHandler {
         lastCDown = cDown;
     }
 
-    private static Tag toNbtTag(ItemStack stack) {
-        Minecraft mc = Minecraft.getInstance();
-        if (mc.level == null) {
+    private static Tag toNbtTag(ItemStack stack, HolderLookup.Provider registries) {
+        if (stack == null || stack.isEmpty() || registries == null) {
             return null;
         }
-        var ops = RegistryOps.create(NbtOps.INSTANCE, mc.level.registryAccess());
+        var ops = RegistryOps.create(NbtOps.INSTANCE, registries);
         return ItemStack.CODEC.encodeStart(ops, stack).result().orElse(null);
+    }
+
+    private static Tag toNbtTag(ItemStack stack) {
+        Minecraft mc = Minecraft.getInstance();
+        return mc.level == null ? null : toNbtTag(stack, mc.level.registryAccess());
+    }
+
+    public static List<Component> appendItemNbtTooltip(ItemStack stack, Item.TooltipContext context, List<Component> original) {
+        NbtviewerConfig cfg = NbtviewerClient.CONFIG;
+        if (cfg == null || !cfg.enabled || stack == null || stack.isEmpty()) {
+            return original;
+        }
+
+        ArrayList<Component> lines = new ArrayList<>(original);
+        boolean shiftDown = NbtTooltipHandler.isShiftDown();
+        if (cfg.shiftOnly && !shiftDown) {
+            if (cfg.showHintLine) {
+                lines.add(Component.translatable("nbtviewer.tooltip.hold_shift").setStyle(NbtTooltipHandler.hintStyle(cfg)));
+            }
+            return lines;
+        }
+
+        Tag tag = NbtTooltipHandler.toNbtTag(stack, context.registries());
+        if (tag == null) {
+            return lines;
+        }
+
+        String snbt = tag.toString();
+        NbtTooltipHandler.rememberVisibleSnbt(snbt);
+        lines.addAll(NbtTooltipHandler.createFormattedSnbtLines(cfg, snbt));
+        if (cfg.showHintLine) {
+            lines.add(Component.translatable("nbtviewer.tooltip.copy_hint").setStyle(NbtTooltipHandler.hintStyle(cfg)));
+        }
+        return lines;
     }
 
     public static Optional<TooltipComponent> fabric$maybeProvideTooltipComponent(ItemStack stack, Optional<TooltipComponent> original) {
@@ -646,7 +680,54 @@ public final class NbtTooltipHandler {
         if (tag == null) {
             return;
         }
-        client.gui.setScreen((Screen)new MobNbtNotebookScreen((Component)entity.getDisplayName().copy(), tag.toString(), NbtviewerClient.CONFIG));
+        NbtTooltipHandler.openNotebook(client, entity.getDisplayName().copy(), tag);
+    }
+
+    private static void openTargetNotebook(Minecraft client) {
+        if (client.level == null) {
+            return;
+        }
+
+        HitResult hit = client.hitResult;
+        if (hit instanceof EntityHitResult entityHit) {
+            Entity entity = entityHit.getEntity();
+            if (entity != null && !entity.isRemoved()) {
+                CompoundTag tag = NbtTooltipHandler.getBestEntityTag(entity);
+                if (tag != null) {
+                    NbtTooltipHandler.openNotebook(client, entity.getDisplayName().copy(), tag);
+                }
+                return;
+            }
+        }
+
+        if (hit instanceof BlockHitResult blockHit) {
+            BlockPos pos = blockHit.getBlockPos();
+            var state = client.level.getBlockState(pos);
+            CompoundTag tag;
+            BlockEntity blockEntity = client.level.getBlockEntity(pos);
+            if (blockEntity != null) {
+                try {
+                    tag = blockEntity.saveWithFullMetadata(client.level.registryAccess());
+                } catch (RuntimeException ignored) {
+                    tag = NbtUtils.writeBlockState(state);
+                }
+            } else {
+                tag = NbtUtils.writeBlockState(state);
+            }
+
+            tag.putInt("x", pos.getX());
+            tag.putInt("y", pos.getY());
+            tag.putInt("z", pos.getZ());
+            String blockId = BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString();
+            Component title = Component.literal(blockId + " @ " + pos.getX() + ", " + pos.getY() + ", " + pos.getZ());
+            NbtTooltipHandler.openNotebook(client, title, tag);
+        }
+    }
+
+    private static void openNotebook(Minecraft client, Component targetName, CompoundTag tag) {
+        String snbt = tag.toString();
+        NbtTooltipHandler.rememberVisibleSnbt(snbt);
+        client.gui.setScreen((Screen)new MobNbtNotebookScreen(targetName, snbt, NbtviewerClient.CONFIG));
     }
 
     private static Entity getSelectedOverlayEntity(Minecraft client) {

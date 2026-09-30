@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'org.hohigamer.nbtviewer'
-version = '2.3.1'
+version = '2.3.2'
 
 base {
     archivesName = 'NamNBTview'
@@ -42,10 +42,10 @@ java {
 
 tasks.named('jar') {
     archiveBaseName.set('NamNBTview')
-    archiveVersion.set('2.3.1-mc26.3-fabric')
+    archiveVersion.set('2.3.2-mc26.3-fabric')
 }
 
 tasks.named('sourcesJar') {
     archiveBaseName.set('NamNBTview')
-    archiveVersion.set('2.3.1-mc26.3-fabric')
+    archiveVersion.set('2.3.2-mc26.3-fabric')
 }
